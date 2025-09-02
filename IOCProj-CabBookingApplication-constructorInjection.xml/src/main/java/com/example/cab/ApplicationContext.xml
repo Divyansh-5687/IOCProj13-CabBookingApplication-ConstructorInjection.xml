@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Driver Bean -->
+    <bean id="driver" class="com.example.cab.Driver">
+        <constructor-arg value="Rahul Sharma"/>
+        <constructor-arg value="DL-09-2025"/>
+    </bean>
+
+    <!-- Car Bean -->
+    <bean id="car" class="com.example.cab.Car">
+        <constructor-arg value="Toyota Innova"/>
+        <constructor-arg value="MH12AB1234"/>
+        <constructor-arg ref="driver"/>
+    </bean>
+
+    <!-- Booking Bean -->
+    <bean id="booking" class="com.example.cab.Booking">
+        <constructor-arg value="BOOK1001"/>
+        <constructor-arg value="Airport"/>
+        <constructor-arg value="Hotel Taj"/>
+        <constructor-arg ref="car"/>
+    </bean>
+
+</beans>
